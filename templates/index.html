@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Attendance</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>📋 Smart Attendance</h1>
+
+    <!-- FORM -->
+    <div class="form">
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <input type="text" id="roll" placeholder="Roll No" required>
+
+        <select id="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+
+        <button onclick="addAttendance()">Add Attendance</button>
+    </div>
+
+    <!-- CLEAR BUTTON -->
+    <button onclick="clearData()">🗑 New Attendance</button>
+
+    <h2>Records</h2>
+
+    <!-- TABLE -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
